@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: indian-stock-analyzer
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /_stcore/health
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8501
